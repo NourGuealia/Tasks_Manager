@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.input {
+  @apply outline-none bg-transparent border-b-2 border-blue-900 pl-2  text-blue-900 placeholder-blue-900  h-12 rounded-md;
+}
