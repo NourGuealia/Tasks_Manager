@@ -4,7 +4,7 @@ import { TaskListContext } from "../Context/TaskListContext";
 import { useState } from "react";
 import { useEffect } from "react";
 const ListofTasks = () => {
-  const { tasks, removeAll, filtered } = useContext(TaskListContext);
+  const { tasks, removeAll } = useContext(TaskListContext);
 
   return (
     <div className="overflow-y-auto min-h-[20rem]  pt-7">
@@ -20,7 +20,7 @@ const ListofTasks = () => {
               Clear all
             </button>
           </div>
-          {filtered.map((task) => {
+          {tasks.map((task) => {
             return <Task task={task} key={task?.id} />;
           })}
         </>

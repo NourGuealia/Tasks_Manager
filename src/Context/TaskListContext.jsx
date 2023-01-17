@@ -59,12 +59,7 @@ const TaskListContextProvider = (props) => {
   };
 
   const categories = ["Work", "Home", "Education", "Fun"];
-  //filter by category :
-  const [filtered, setFiltered] = useState(tasks);
-  const filter = (category) => {
-    setFiltered(tasks.filter((task) => task.categorie == category));
-    console.log(filtered);
-  };
+
   return (
     <TaskListContext.Provider
       value={{
@@ -76,8 +71,6 @@ const TaskListContextProvider = (props) => {
         editItem,
         editTask,
         findItem,
-        filtered,
-        filter,
       }}
     >
       {props.children}
