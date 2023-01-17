@@ -63,12 +63,12 @@ const Form = ({ open, setOpen }) => {
     <div
       className={
         open
-          ? "w-full h-full  bg-gray-200 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-opacity-50  "
+          ? "w-full h-full  bg-gray-200 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-opacity-50 "
           : "hidden"
       }
     >
       <div className=" w-full mx-24 shadow-sm border-none p-3 bg-white rounded-xl flex flex-col  ">
-        <div className="flex items-center justify-end mb-2">
+        <div className="flex items-center justify-end mb-2 cursor-pointer ">
           <GiCancel color="black" size={24} onClick={() => setOpen(false)} />
         </div>
 

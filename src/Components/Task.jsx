@@ -32,10 +32,10 @@ export const Task = ({ task }) => {
   return (
     <>
       <div className="flex justify-between mb-5 h-22 ">
-        <div className=" flex w-16 sm:w-24  mr-2  justify-center items-center shadow-xl border-none p-3 bg-white rounded-xl ">
+        <div className=" flex w-16 sm:w-24  mr-2  justify-center items-center shadow-xl  p-3 bg-white rounded-xl border-t border-purple-100   ">
           <i>{findIcon(task.categorie)}</i>
         </div>
-        <div className="grid grid-cols-6 gap-2 basis-11/12  shadow-xl border-none p-3 bg-white rounded-xl  ">
+        <div className="grid grid-cols-6 gap-2 basis-11/12  shadow-xl  p-3 bg-white rounded-xl border-t border-purple-100 ">
           <div className="col-start-1 col-span-5 text-base sm:text-xl font-bold">
             {task.title}
           </div>
