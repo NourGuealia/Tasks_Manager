@@ -1,6 +1,9 @@
 # Tasks manager using Reactjs and TailwindCSS.
 A completly responsive application with Reactjs to add , update and remove a task from a list of tasks .
 
+## Demo :
+- https://tasks-manager-ashen.vercel.app/
+
 ## Technologies used
 - Reactjs
     - ContextAPI
