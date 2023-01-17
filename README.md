@@ -7,6 +7,13 @@ A completly responsive application with Reactjs to add , update and remove a tas
     - LocalStorage
 - TailwindCSS
 
+## Features :
+- Add task 
+- Edit task 
+- Delete Task 
+- Delete all tasks
+- Filter tasks by category 
+
 ## Getting started
 
 1. Clone the repository
