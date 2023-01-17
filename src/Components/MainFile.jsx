@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
-import Categories from "./Categories";
 import Form from "./Form";
 import ListofTasks from "./ListofTasks";
 
@@ -10,9 +9,8 @@ const MainFile = () => {
   return (
     <div className="flex flex-col gap-14  mx-auto my-8 py-14 px-6  rounded-xl w-full h-[55rem] sm:w-[40rem] relative shadow-xl ">
       <div className="font-body font-bold text-3xl sm:text-5xl mb-7">
-        be productive...
+        Be productive...
       </div>
-      <Categories />
       <Form open={open} setOpen={setOpen} />
 
       <ListofTasks />
