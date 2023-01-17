@@ -4,5 +4,5 @@
 @tailwind components;
 @tailwind utilities;
 .input {
-  @apply outline-none bg-transparent border-b-2 border-blue-900 pl-2  text-blue-900 placeholder-blue-900  h-12 rounded-md;
+  @apply outline-none bg-transparent border-b-2 border-purple-600 pl-2  text-gray-800 placeholder-gray-600  h-12;
 }

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { TaskListContext } from "../Context/TaskListContext";
 import { MdCastForEducation } from "react-icons/md";
-
-const Form = () => {
+import { GiCancel } from "react-icons/gi";
+const Form = ({ open, setOpen }) => {
   const { addTask, editTask, editItem, categories } =
     useContext(TaskListContext);
   const [title, setTitle] = useState("");
@@ -16,12 +16,14 @@ const Form = () => {
       setTitle("");
       setDescription("");
       setCategorie("Work");
+      setOpen(false);
     } else {
       // case of updating
       editTask(title, description, categorie, editItem.id);
       setTitle("");
       setDescription("");
       setCategorie("Work");
+      setOpen(false);
     }
   };
   const handleTitle = (e) => {
@@ -48,37 +50,45 @@ const Form = () => {
       setTitle(editItem.title);
       setDescription(editItem.description);
       setCategorie(editItem.categorie);
+      setOpen(true);
     } else {
       setTitle("");
       setDescription("");
       setCategorie("Work");
+      setOpen(false);
     }
   }, [editItem]);
 
   return (
-    <>
-      <span className="text-gray-400 mb-8 text-sm mt-16">Add new task</span>
-      <form
-        onSubmit={handleForm}
-        className="shadow-sm border-none p-3 bg-white rounded-xl "
-      >
-        <div className="sm:flex  justify-between mt-1 mb-8  ">
+    <div
+      className={
+        open
+          ? "w-full h-full  bg-gray-200 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center bg-opacity-50  "
+          : "hidden"
+      }
+    >
+      <div className=" w-full mx-24 shadow-sm border-none p-3 bg-white rounded-xl flex flex-col  ">
+        <div className="flex items-center justify-end mb-2">
+          <GiCancel color="black" size={24} onClick={() => setOpen(false)} />
+        </div>
+
+        <form onSubmit={handleForm} className="w-full flex flex-col">
           <input
-            className="input w-full sm:w-40  mb-11 sm:mb "
+            className="input  w-full sm:w-96  mb-11 sm:mb"
             placeholder="Title"
             value={title}
             onChange={handleTitle}
             required
           />
           <input
-            className=" input w-full sm:w-60 mb-11  sm:mb "
+            className=" input w-full sm:w-96 mb-11  sm:mb "
             placeholder="Description"
             value={description}
             onChange={handleDescription}
             required
           />
           <select
-            className="fa bg-blue-900  pl-2  text-white w-32 h-12 rounded-md"
+            className="fa bg-purple-600  pl-2  text-white w-56 h-12 rounded-md"
             value={categorie}
             onChange={handleCategorie}
           >
@@ -90,21 +100,23 @@ const Form = () => {
               );
             })}
           </select>
-        </div>
-        <button
-          type="submit"
-          className="bg-blue-900 h-12 w-20 rounded-md text-white mr-2"
-        >
-          Add
-        </button>
-        <button
-          className="bg-blue-900 h-12 w-20 rounded-md text-white"
-          onClick={handleClear}
-        >
-          Clean
-        </button>
-      </form>
-    </>
+          <div className="sm:flex  justify-between  mb-8   mt-2">
+            <button
+              type="submit"
+              className="bg-purple-600 h-12 w-20 rounded-md text-white mr-2"
+            >
+              Add
+            </button>
+            <button
+              className="bg-purple-600 h-12 w-20 rounded-md text-white"
+              onClick={handleClear}
+            >
+              Clean
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 };
 

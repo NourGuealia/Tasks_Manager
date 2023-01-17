@@ -11,37 +11,37 @@ export const Task = ({ task }) => {
     switch (categorie) {
       case "Work":
         return (
-          <HiOfficeBuilding className="sm:w-12  sm:h-12 w-7 h-7 text-blue-900" />
+          <HiOfficeBuilding className="sm:w-12  sm:h-12 w-7 h-7 text-purple-600" />
         );
         break;
       case "Home":
-        return <HiHome className="w-12 h-12 text-blue-900" />;
+        return <HiHome className="w-12 h-12 text-purple-600" />;
         break;
       case "Education":
-        return <MdCastForEducation className="w-12 h-12 text-blue-900" />;
+        return <MdCastForEducation className="w-12 h-12 text-purple-600" />;
         break;
       case "Fun":
-        return <GiPartyPopper className="w-12 h-12 text-blue-900" />;
+        return <GiPartyPopper className="w-12 h-12 text-purple-600" />;
         break;
 
       default:
-        <HiOfficeBuilding className="w-12 h-12 text-blue-900" />;
+        <HiOfficeBuilding className="w-12 h-12 text-purple-600" />;
         break;
     }
   };
   return (
     <>
-      <div className="flex justify-between mb-5 h-22">
-        <div className=" flex w-16 sm:w-24  mr-2  justify-center items-center shadow-sm border-none p-3 bg-white rounded-xl ">
+      <div className="flex justify-between mb-5 h-22 ">
+        <div className=" flex w-16 sm:w-24  mr-2  justify-center items-center shadow-xl border-none p-3 bg-white rounded-xl ">
           <i>{findIcon(task.categorie)}</i>
         </div>
-        <div className="grid grid-cols-6 gap-2 basis-11/12  shadow-sm border-none p-3 bg-white rounded-xl  ">
+        <div className="grid grid-cols-6 gap-2 basis-11/12  shadow-xl border-none p-3 bg-white rounded-xl  ">
           <div className="col-start-1 col-span-5 text-base sm:text-xl font-bold">
             {task.title}
           </div>
           <div className="col-start-6 flex justify-between ">
             <svg
-              className="h-9 w-20 sm:h-9 sm:w-9 sm:p-1 p-0 text-blue-900 rounded-full hover:shadow-md hover:cursor-pointer"
+              className="h-9 w-20 sm:h-9 sm:w-9 sm:p-1 p-0 text-purple-600 rounded-full hover:shadow-md hover:cursor-pointer"
               width="24"
               height="24"
               viewBox="0 0 24 24"
@@ -58,7 +58,7 @@ export const Task = ({ task }) => {
             </svg>
 
             <svg
-              className="h-9 w-20 sm:h-9 sm:w-9 p-1 rounded-full text-blue-900 hover:shadow-md hover:cursor-pointer"
+              className="h-9 w-20 sm:h-9 sm:w-9 p-1 rounded-full text-purple-600 hover:shadow-md hover:cursor-pointer"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -75,7 +75,7 @@ export const Task = ({ task }) => {
             </svg>
           </div>
 
-          <div className="col-start-1 col-span-4 text-blue-900">
+          <div className="col-start-1 col-span-4 text-gray-600">
             {task.description}
           </div>
         </div>
